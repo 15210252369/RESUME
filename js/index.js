@@ -350,7 +350,7 @@ let detailRender = (function () {
     }
 })()
 
-$(document).on('touchstart touchmove touchend', (ev) => {
+$('body').on('touchstart touchmove touchend', (ev) => {
     ev.preventDefault();
 });
 

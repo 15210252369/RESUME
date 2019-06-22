@@ -127,8 +127,8 @@ let phoneRender = (function () {
             answerBell.play();
             answerBell.volume = 0.3;
 
-            $answerMarkLink.click(answerMarkTouch);
-            $hangMarkLink.click(closePhone);
+            $answerMarkLink.tap(answerMarkTouch);
+            $hangMarkLink.tap(closePhone);
         }
     }
 })();
@@ -238,7 +238,7 @@ let messageRender = (function () {
             autoTimer = setInterval(showMessage, interval);
 
             //=>SUBMIT
-            $submit.click(handleSubmit);
+            $submit.tap(handleSubmit);
 
             //=>MUSIC
             demonMusic.play();
@@ -344,16 +344,11 @@ let detailRender = (function () {
             if (!swiper) {
                 swiperInit()
             }
-         
-            swiper.slideTo(index,0)
+
+            swiper.slideTo(index, 0)
         }
     }
 })()
-
-$(document).on('touchstart touchmove touchend', (ev) => {
-    ev.preventDefault();
-});
-
 let url = window.location.href;
 let well = url.indexOf('#')
 let hash = well === -1 ? null : url.substr(well + 1)

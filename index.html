@@ -45,6 +45,10 @@
             });
         }
 
+        $('document').on('touchstart touchmove touchend', (ev) => {
+            ev.preventDefault();
+        });
+
     </script>
 </head>
 

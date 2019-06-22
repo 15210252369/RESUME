@@ -353,6 +353,7 @@ let detailRender = (function () {
 $(document).on('touchstart touchmove touchend', (ev) => {
     ev.preventDefault();
 });
+
 let url = window.location.href;
 let well = url.indexOf('#')
 let hash = well === -1 ? null : url.substr(well + 1)

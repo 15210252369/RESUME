@@ -24,7 +24,27 @@
             computedRem()
             window.addEventListener('resize', computedRem)
         }(window)
+    
+window.onload=function () {  
+        document.addEventListener('touchstart',function (event) {  
+            if(event.touches.length>1){  
+                event.preventDefault();  
+            }  
+        })  
+        var lastTouchEnd=0;  
+        document.addEventListener('touchend',function (event) {  
+            var now=(new Date()).getTime();  
+            if(now-lastTouchEnd<=300){  
+                event.preventDefault();  
+            }  
+            lastTouchEnd=now;  
+        },false)  
 
+--------------------- 
+作者：Running_96 
+来源：CSDN 
+原文：https://blog.csdn.net/banana960531/article/details/86479484 
+版权声明：本文为博主原创文章，转载请附上博文链接！
 
     </script>
 </head>
